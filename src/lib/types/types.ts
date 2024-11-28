@@ -27,5 +27,11 @@ export type InputProps = {
     setVal: (value: string | number) => void
 }
 export type TodoItemProps = { 
-    todo: { id: string, text: string, priority: "🔴" | "🟡" | "🟢", finishBy: string }
+    id: string 
+    text: string 
+    priority: string 
+    finishBy: string 
+}
+export type TodoListProps = {
+    todos: TodoItemProps[]
 }
