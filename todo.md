@@ -1,4 +1,4 @@
-- [ ] remove background component from diagram, replace with container
-- [ ] replace advertising with container
-- [ ] add advert component to diagram
+- [X] remove background component from diagram, replace with container
+- [X] replace advertising with container
+- [X] add advert component to diagram
 - [ ] move controlled component state into form
