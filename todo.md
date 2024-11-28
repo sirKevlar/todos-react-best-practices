@@ -1,4 +1,5 @@
-- [X] remove background component from diagram, replace with container
-- [X] replace advertising with container
-- [X] add advert component to diagram
-- [ ] move controlled component state into form
+- [x] remove background component from diagram, replace with container
+- [x] replace advertising with container
+- [x] add advert component to diagram
+- [x] move controlled component state into form
+- [ ] make priority a select (dropdown)
