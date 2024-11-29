@@ -7,11 +7,13 @@ import Logo from './components/Logo'
 import ProgressBar from './components/ProgressBar'
 import CompletionStatus from './components/CompletionStatus'
 import AddTodoForm from './components/AddTodoForm'
-import { INITIAL_TODOS } from './lib/constants/constants'
-import { TodoItemProps } from './lib/types/types'
+import { GUEST_USER, INITIAL_TODOS } from './lib/constants/constants'
+import { TodoItemProps, User } from './lib/types/types'
+import { UserContext } from './contexts/User'
 
 function App() {
   const [todoList, setTodoList] = useState(INITIAL_TODOS)
+  const [currentUser] = useState<User>(GUEST_USER)
   const addTodo = (newTodo: TodoItemProps) => {
     setTodoList((curr)=>{
       return [...curr, newTodo]
@@ -27,7 +29,7 @@ function App() {
   } 
 
   return (
-    <>
+    <UserContext.Provider value={currentUser}>
       <Container id="test" display="flex" direction="flex-col" align="align-center" justify="justify-center">
           <Logo/>
           <CompletionStatus progressPercentage='50'/>
@@ -38,7 +40,7 @@ function App() {
           <Button type="button" id="button-two" onClick={()=>{console.log('two')}}>two</Button>
           <Button type="button" id="button-three" onClick={()=>{console.log('thr')}}>thr</Button>
       </Container>
-    </>
+    </UserContext.Provider>
   )
 }
 

@@ -59,4 +59,5 @@ export type User = {
     lastName: string 
     email: string 
     id: string 
-    userLevel: "guest" | "admin"}
+    userLevel: string
+}
