@@ -1,7 +1,7 @@
 import { InputProps } from "../lib/types/types";
 
-export default function Input({id, type, val, setVal}: InputProps) {
+export default function Input({id, name, placeholder, type, val, handleChange}: InputProps) {
   return (
-    <input id={id} type={type} value={val} onChange={(e)=>{setVal(e.target.value)}}/>
+    <input id={id} name={name} placeholder={placeholder} type={type} value={val} onChange={(e)=>{handleChange(e.target.value, e.target.name)}}/>
   )
 }
