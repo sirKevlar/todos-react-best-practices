@@ -28,6 +28,15 @@ h1, h2, h3, h4, h5, h6, li, ul, ol, p {
 ul {
   list-style-type: none;
 }
+.progress-outer {
+  border: red 1px double;
+  height: 5px;
+  width: 100%;
+}
+.progress-bar {
+  background-color: rgba(255, 0, 0, 0.495);
+  height: 5px;
+}
 .todo {
   width: 100%
 }
