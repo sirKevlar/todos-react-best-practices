@@ -1,11 +1,19 @@
 import { TodoItemProps, TodoListProps } from "../lib/types/types"
+import DeleteButton from "./DeleteButton"
 import TodoItem from "./TodoItem"
 
-export default function TodoList({todos}: TodoListProps) {
+export default function TodoList({todoList, removeTodo}: TodoListProps) {
+
   return (
     <ul>
-        {todos.map(({id, text, priority, finishBy}: TodoItemProps)=>{
-            return <TodoItem id={id} text={text} priority={priority} finishBy={finishBy} />
+        {todoList.map(({id, text, priority, finishBy}: TodoItemProps)=>{
+            const key = `todoItem${id}`
+
+            return (
+              <TodoItem key={key} id={id} text={text} priority={priority} finishBy={finishBy}>
+                <DeleteButton id={id} onClick={()=>{removeTodo(id)}}/>
+              </TodoItem>
+              )
         })}
     </ul>
   )
