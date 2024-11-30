@@ -5,9 +5,12 @@ export type AddTodoFormProps = {
     addTodo: (newTodo: TodoItemProps) => void
 }
 export type AdvertProps = {
-    id: string
-    imgUrl: string 
+    id?: string
+    image: string 
     link: string
+}
+export type AdvertisingProps = {
+    adverts: AdvertProps[]
 }
 export type ButtonProps = {
     id: string
