@@ -64,3 +64,7 @@ export type User = {
     id: string 
     userLevel: string
 }
+export type DetermineBreakpoint = (width: number) => string
+export type GenericBlankFunction = () => void
+export type HandleResize = () => React.SyntheticEvent
+export type UseScreenFormat = () => string
