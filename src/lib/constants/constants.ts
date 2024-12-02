@@ -12,13 +12,21 @@ export const INITIAL_TODOS = [
     text: 'do this thing right away',
     priority: '🔴',
     finishBy: '241215',
+    status: 'complete',
   },
-  { id: '2', text: 'do this thing soon', priority: '🟡', finishBy: '241215' },
+  {
+    id: '2',
+    text: 'do this thing soon',
+    priority: '🟡',
+    finishBy: '241215',
+    status: 'incomplete',
+  },
   {
     id: '3',
     text: 'do this thing in a bit',
     priority: '🟢',
     finishBy: '241225',
+    status: 'incomplete',
   },
 ];
 
