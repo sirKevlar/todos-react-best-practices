@@ -5,6 +5,7 @@ import Input from './Input';
 
 export default function AddTodoForm({
   addTodo,
+  setTodoList
 }: AddTodoFormProps) {
   const [formInputs, setFormInputs] = useState({
     text: '',
@@ -19,7 +20,7 @@ export default function AddTodoForm({
   };
 
   return (
-    <form className='add-todo' onSubmit={(e)=>{e.preventDefault(); addTodo({...formInputs, id: `${new Date()}`})}}>
+    <form className='add-todo' onSubmit={(e)=>{e.preventDefault(); addTodo({...formInputs, status:'incomplete', id: `${new Date()}`}, setTodoList)}}>
       <Input
         id='todo-text'
         name='text'
