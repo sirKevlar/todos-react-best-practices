@@ -2,7 +2,8 @@ import React, { FormEventHandler, MouseEventHandler } from "react"
 
 
 export type AddTodoFormProps = {
-    addTodo: (newTodo: TodoItemProps) => void
+    addTodo: (newTodo: TodoItemType, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
+    setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
 export type AdvertProps = {
     id?: string
@@ -29,7 +30,8 @@ export type ContainerProps = {
 }
 export type DeleteProps = {
     id: string 
-    onClick: () => void
+    removeTodo: (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
+    setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
 export type InputProps = {
     type: "text" | "radio" | "checkbox"
@@ -49,16 +51,25 @@ export type TodoItemProps = {
     priority: string 
     finishBy: string 
     status: string 
-    changeTodoStatus: (id: string) => void
+    changeTodoStatus: (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
+    setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
 export type TodoListProps = {
-    todoList: TodoItemProps[]
-    removeTodo: (id: string) => void
-    changeTodoStatus: (id: string) => void
+    todoList: TodoItemType[]
+    removeTodo: (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
+    changeTodoStatus: (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
+    setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
 export type UserProviderProps = {
     children: React.ReactNode
     setUser: React.SyntheticEvent
+}
+export type TodoItemType = {
+        id: string,
+        text: string,
+        priority: string,
+        finishBy: string,
+        status: string,
 }
 export type User = {
     firstName: string 
