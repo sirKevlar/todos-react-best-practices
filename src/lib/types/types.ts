@@ -48,10 +48,13 @@ export type TodoItemProps = {
     text: string 
     priority: string 
     finishBy: string 
+    status: string 
+    changeTodoStatus: (id: string) => void
 }
 export type TodoListProps = {
     todoList: TodoItemProps[]
     removeTodo: (id: string) => void
+    changeTodoStatus: (id: string) => void
 }
 export type UserProviderProps = {
     children: React.ReactNode
