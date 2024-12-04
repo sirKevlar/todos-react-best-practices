@@ -18,6 +18,7 @@ export type ButtonProps = {
     id: string
     children: string
     type: "submit" | "reset" | "button"
+    disabled?: boolean
     onClick?: MouseEventHandler<HTMLButtonElement>
     onSubmit?: FormEventHandler<HTMLButtonElement>
 }
@@ -50,7 +51,7 @@ export type RegisterFormProps = {
     isModalVisible: boolean 
     setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
     isRegisteredUser: boolean
-    setIsRegisteredUser: React.Dispatch<React.SetStateAction<boolean>> 
+    setCurrentUser: React.Dispatch<React.SetStateAction<User>> 
 }
 export type SignInOutProps = {
     setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
@@ -92,10 +93,9 @@ export type ValidTodoInputs = {
     finishBy: string
 }
 export type User = {
-    userId: string;
-    name: string;
-    email: string;
-    authToken?: string;
+    displayName: string | null;
+    email: string | null;
+    uid?: string;
   }
 export type DetermineBreakpoint = (width: number) => string
 export type GenericBlankFunction = () => void
