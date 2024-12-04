@@ -3,7 +3,7 @@ import { AddTodoFormProps } from '../lib/types/types';
 import Button from './Button';
 import Input from './Input';
 import { isValidDateFormat } from '../lib/utils/isValidDateFormat';
-import { UserContext } from '../contexts/User';
+import { UserContext } from '../contexts/UserContext';
 
 export default function AddTodoForm({
   activeTodos,
@@ -11,7 +11,7 @@ export default function AddTodoForm({
   setTodoList,
 }: AddTodoFormProps) {
   const user = useContext(UserContext)
-  const canAddTodo = user?.userLevel === 'registered' || activeTodos < 5
+  const canAddTodo = user?.authToken || activeTodos < 5
   
   const [formInputs, setFormInputs] = useState({
     text: '',
