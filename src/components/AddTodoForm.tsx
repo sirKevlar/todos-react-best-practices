@@ -11,7 +11,7 @@ export default function AddTodoForm({
   setTodoList,
 }: AddTodoFormProps) {
   const user = useContext(UserContext)
-  const canAddTodo = user?.authToken || activeTodos < 5
+  const canAddTodo = user?.uid || activeTodos < 5
   
   const [formInputs, setFormInputs] = useState({
     text: '',
@@ -35,7 +35,6 @@ export default function AddTodoForm({
         const isValidDate = isValidDateFormat(formInputs.finishBy)
 
         if (isValidDate && formInputs.text !== '' && canAddTodo) {
-          console.log('here');
           
           addTodo(
             { ...formInputs, status: 'incomplete', id: `${new Date()}` },
