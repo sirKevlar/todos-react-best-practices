@@ -19,15 +19,13 @@ import { addTodo, changeTodoStatus, removeTodo } from './lib/utils/events';
 import AddTodoForm from './components/AddTodoForm';
 import RegisterForm from './components/RegisterForm';
 import SignInOut from './components/SignInOut';
-import { AuthContext } from './contexts/AuthContext';
 
 function App() {
   const [todoList, setTodoList] = useState(INITIAL_TODOS);
-  const [user, setUser] = useState<User | null>(null);
-  const [currentUser] = useState<User>(GUEST_USER);
+  const [isRegisteredUser, setIsRegisteredUser] = useState(false)
+  const [currentUser, setCurrentUser] = useState<User>(GUEST_USER);
   const [adverts] = useState(CURRENT_ADVERTS);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isRegisteredUser, setIsRegisteredUser] = useState(false);
   const screenType = useScreenFormat();
 
   const progressPercentage = useMemo(() => {
@@ -36,16 +34,17 @@ function App() {
     });
     return Math.round((completedTodos.length / todoList.length) * 100);
   }, [todoList]);
+  
 
   if (screenType === 'desktop') {
+    
     return (
-      <AuthContext.Provider value={{ user, setUser }}>
         <UserContext.Provider value={currentUser}>
           <RegisterForm
             isModalVisible={isModalVisible}
             setIsModalVisible={setIsModalVisible}
             isRegisteredUser={isRegisteredUser}
-            setIsRegisteredUser={setIsRegisteredUser}
+            setCurrentUser={setCurrentUser}
           >
             <Container
               id='background'
@@ -55,6 +54,7 @@ function App() {
             >
               <Graphic />
               <Advertising adverts={adverts} />
+              <h2 id="welcome-message">Hey there {currentUser.displayName} 👋</h2>
             </Container>
             <Container id='body' display='grid'>
               <Container id='header' display='grid'>
@@ -99,7 +99,6 @@ function App() {
             </Container>
           </RegisterForm>
         </UserContext.Provider>
-      </AuthContext.Provider>
     );
   }
   if (screenType === 'tablet') return <h1>Tablet View Not Supported Yet</h1>;
