@@ -31,11 +31,9 @@ export const INITIAL_TODOS = [
 ];
 
 export const GUEST_USER = {
-  firstName: 'Guest',
-  lastName: 'User',
-  email: 'example@email.com',
-  id: '1',
-  userLevel: 'guest',
+    userId: "SirKevlar",
+    name: "Kev Morel",
+    email: "kev@kev.com",
 };
 
 export const CURRENT_ADVERTS = [
@@ -47,3 +45,5 @@ export const CURRENT_ADVERTS = [
   { image: linwoods, link: 'https://linwoodshealthfoods.com/' },
   { image: redFox, link: 'https://www.beltonfarm.co.uk/' },
 ];
+
+export const VALID_DATE_FORMAT_REGEX = /\d{6}/
