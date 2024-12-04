@@ -31,9 +31,8 @@ export const INITIAL_TODOS = [
 ];
 
 export const GUEST_USER = {
-    userId: "SirKevlar",
-    name: "Kev Morel",
-    email: "kev@kev.com",
+    displayName: "Guest User",
+    email: "guest@guest.com",
 };
 
 export const CURRENT_ADVERTS = [
