@@ -2,6 +2,7 @@ import React, { FormEventHandler, MouseEventHandler } from "react"
 
 
 export type AddTodoFormProps = {
+    activeTodos: number
     addTodo: (newTodo: TodoItemType, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => void
     setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
@@ -44,6 +45,17 @@ export type InputProps = {
 export type ProgressBarProps = {
     progressPercentage: string
 }
+export type RegisterFormProps = {
+    children: React.ReactNode
+    isModalVisible: boolean 
+    setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+    isRegisteredUser: boolean
+    setIsRegisteredUser: React.Dispatch<React.SetStateAction<boolean>> 
+}
+export type SignInOutProps = {
+    setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+    setIsRegisteredUser: React.Dispatch<React.SetStateAction<boolean>> 
+}
 export type TodoItemProps = { 
     children?: React.ReactNode
     id: string 
@@ -62,7 +74,7 @@ export type TodoListProps = {
 }
 export type UserProviderProps = {
     children: React.ReactNode
-    setUser: React.SyntheticEvent
+    setUser: React.Dispatch<React.SetStateAction<TodoItemType[]>>
 }
 export type TodoItemType = {
         id: string,
@@ -71,13 +83,20 @@ export type TodoItemType = {
         finishBy: string,
         status: string,
 }
-export type User = {
-    firstName: string 
-    lastName: string 
-    email: string 
-    id: string 
-    userLevel: string
+export type ContextArgs = {
+    children: React.ReactNode
 }
+export type ValidTodoInputs = {
+    text: string 
+    priority: string 
+    finishBy: string
+}
+export type User = {
+    userId: string;
+    name: string;
+    email: string;
+    authToken?: string;
+  }
 export type DetermineBreakpoint = (width: number) => string
 export type GenericBlankFunction = () => void
 export type HandleResize = () => React.SyntheticEvent
