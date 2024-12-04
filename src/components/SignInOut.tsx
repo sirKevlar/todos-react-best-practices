@@ -1,13 +1,16 @@
 import { SignInOutProps } from "../lib/types/types";
 import Button from "./Button";
 
+
 export default function SignInOut({setIsRegisteredUser, setIsModalVisible}: SignInOutProps) {
+
     const handleSignIn = () => {
-        setIsRegisteredUser(true)
         setIsModalVisible(true)
+        setIsRegisteredUser(true)
     }
     const handleRegister = () => {
         setIsModalVisible(true)
+        setIsRegisteredUser(false)
     }
 
   return (
