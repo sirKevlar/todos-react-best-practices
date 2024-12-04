@@ -16,10 +16,8 @@ export const removeTodo = (id: string, setTodoList: React.Dispatch<React.SetStat
       })
 }
 
-export const changeTodoStatus = (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>> ) => { console.log('invoked');
-
+export const changeTodoStatus = (id: string, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>> ) => {
     setTodoList((curr: TodoItemType[])=>{
-        console.log('setting-list');
       const newList = curr.map((todoItem: TodoItemType)=>{
           if(todoItem.id === id) {
             todoItem.status = todoItem.status === 'complete' ? 'incomplete' : 'complete'
