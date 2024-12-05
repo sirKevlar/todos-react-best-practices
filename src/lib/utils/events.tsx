@@ -5,6 +5,7 @@ import { compareDates } from "./compareDates";
 export const addTodo = (newTodo: TodoItemType, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => {
     setTodoList((curr)=>{
       const sortedTodos = [...curr, newTodo].sort(compareDates)
+      localStorage.setItem('todos', JSON.stringify(sortedTodos))
       return sortedTodos
     })
   }

@@ -6,33 +6,40 @@ import huel from '../../assets/huelAd.jpeg';
 import linwoods from '../../assets/linwoodsAd.jpeg';
 import redFox from '../../assets/redFoxAd.jpeg';
 
-export const INITIAL_TODOS = [
-  {
-    id: '1',
-    text: 'do this important thing',
-    priority: '🔴',
-    finishBy: '241215',
-    status: 'complete',
-  },
-  {
-    id: '2',
-    text: 'and this less important thing',
-    priority: '🟡',
-    finishBy: '241225',
-    status: 'incomplete',
-  },
-  {
-    id: '3',
-    text: 'this thing really isn\'t urgent',
-    priority: '🟢',
-    finishBy: '241231',
-    status: 'incomplete',
-  },
-];
+
+// if (localStorage.getItem('todos') !== null) {INITIAL_TODOS = JSON.parse(localStorage.getItem('todos'))}
+export let INITIAL_TODOS = [
+    {
+      id: '1',
+      text: 'do this important thing',
+      priority: '🔴',
+      finishBy: '241215',
+      status: 'complete',
+    },
+    {
+      id: '2',
+      text: 'and this less important thing',
+      priority: '🟡',
+      finishBy: '241225',
+      status: 'incomplete',
+    },
+    {
+      id: '3',
+      text: "this thing really isn't urgent",
+      priority: '🟢',
+      finishBy: '241231',
+      status: 'incomplete',
+    },
+  ];
+const todosFromLocalStorageString = localStorage.getItem('todos');
+if(todosFromLocalStorageString !== null) {
+  INITIAL_TODOS = JSON.parse(todosFromLocalStorageString)
+}
+
 
 export const GUEST_USER = {
-    displayName: "Guest User",
-    email: "guest@guest.com",
+  displayName: 'Guest User',
+  email: 'guest@guest.com',
 };
 
 export const CURRENT_ADVERTS = [
@@ -45,4 +52,4 @@ export const CURRENT_ADVERTS = [
   { image: redFox, link: 'https://www.beltonfarm.co.uk/' },
 ];
 
-export const VALID_DATE_FORMAT_REGEX = /\d{6}/
+export const VALID_DATE_FORMAT_REGEX = /\d{6}/;
