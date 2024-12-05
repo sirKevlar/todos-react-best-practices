@@ -1,9 +1,11 @@
 import { TodoItemType } from "../types/types";
+import { compareDates } from "./compareDates";
 
 
 export const addTodo = (newTodo: TodoItemType, setTodoList: React.Dispatch<React.SetStateAction<TodoItemType[]>>) => {
     setTodoList((curr)=>{
-      return [...curr, newTodo]
+      const sortedTodos = [...curr, newTodo].sort(compareDates)
+      return sortedTodos
     })
   }
 
