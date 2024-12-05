@@ -7,7 +7,7 @@ import {
   googleAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword
 } from '../firebase/firebase';
 
 export default function RegisterForm({
