@@ -1,5 +1,13 @@
 # The most complicated 'simple' todo list
 
+to run locally:
+```
+git clone https://githun.com/sirKevlar/todos-react-best-practices.git
+cd todos-react-best-practices 
+npm i 
+npm run dev
+```
+
 ## Showcasing React best practices 2024
 
 > ### CLIENTS: 2
