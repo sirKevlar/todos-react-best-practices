@@ -68,8 +68,8 @@ ul {
 }
 #welcome-message {
   position: fixed;
-  right: 215px;
-  top: 45px;
+  right: 18.5%;
+  top: 6%;
   font-size: 1em;
 }
 #body {
@@ -91,7 +91,7 @@ ul {
 }
 #advertising {
   width: 18%;
-  min-width: 200px;
+  min-width: 120px;
 }
 .advert {
   width: 80px;
@@ -234,42 +234,100 @@ ul {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1080px) {
   #body {
-    width: 60%;
+    width: 65%;
+  }
+  #welcome-message {
+    right: 18%
   }
 }
 @media only screen and (max-width: 1000px) {
   #body {
-    width: 56%;
+    width: 64%;
+  }
+  #welcome-message {
+    right: 18.5%
   }
   #main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    font-size: 15px;
+    overflow: auto;
   }
   #todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 93%;
     border: none;
+    overflow: auto;
   }
   .todo {
     padding: 7px 0;
+    height: 17px;
   }
   .input, .primary-button {
-    height: 35px;
+    height: 25px;
   }
 }
 @media only screen and (max-width: 920px) {
   #body {
-    width: 52%;
+    width: 62%;
+  }
+  #welcome-message {
+    right: 19.5%
   }
 }
 @media only screen and (max-width: 840px) {
   #body {
-    width: 48%;
+    width: 60%;
+  }
+  #welcome-message {
+    right: 20.5%
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   #body {
-    width: 44%;
+    width: 80%;
+    height: 75%;
+    font-size: 13px;
+  }
+  #welcome-message {
+    right: 11%;
+    top: 9%;
+  }
+  #graphic {
+    transform: translateY(-80px) rotate(90deg) scale(2)
+  }
+  #advertising {
+    width: 100%;
+    flex-direction: row;
+    transform: translateX(-0%);
+  }
+  .advert {
+    margin: 10px;
+    height: 55px;
+    width: 55px;
+  }
+  .advert:hover {
+    box-shadow: rgb(255, 151, 255) 0 0 10px 0;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .advert {
+    margin: 10px 5px;
+    height: 55px;
+    width: 55px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #body {
+    width: 80%;
+    height: 75%
+  }
+
+  #welcome-message {
+    right: 10%
   }
 }
