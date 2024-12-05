@@ -102,7 +102,7 @@ function App() {
         </UserContext.Provider>
     );
   }
-  if (screenType === 'tablet') {return (
+  if (screenType === 'tablet'|| screenType === 'mobile') {return (
     <UserContext.Provider value={currentUser}>
       <RegisterForm
         isModalVisible={isModalVisible}
@@ -166,7 +166,6 @@ function App() {
       </RegisterForm>
     </UserContext.Provider>
 );}
-  if (screenType === 'mobile') return <h1>Mobile View Not Supported Yet</h1>;
 }
 
 export default App;
