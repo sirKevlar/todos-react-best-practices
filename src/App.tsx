@@ -93,6 +93,7 @@ function App() {
                   <SignInOut
                     setIsModalVisible={setIsModalVisible}
                     setIsRegisteredUser={setIsRegisteredUser}
+                    setCurrentUser={setCurrentUser}
                   />
                 </Container>
               </Container>
@@ -101,7 +102,70 @@ function App() {
         </UserContext.Provider>
     );
   }
-  if (screenType === 'tablet') return <h1>Tablet View Not Supported Yet</h1>;
+  if (screenType === 'tablet') {return (
+    <UserContext.Provider value={currentUser}>
+      <RegisterForm
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+        isRegisteredUser={isRegisteredUser}
+        setCurrentUser={setCurrentUser}
+      >
+        <Container
+          id='background'
+          display='flex'
+          direction='flex-col'
+          align='align-center'
+          justify='justify-between'
+        >
+          <Graphic />
+          <Advertising adverts={adverts} />
+          <h2 id="welcome-message">Hey there {currentUser.displayName} 👋</h2>
+        </Container>
+        <Container id='body' display='grid'>
+          <Container id='header' display='grid'>
+            <Container
+              id='header-top'
+              display='flex'
+              align='align-center'
+              justify='justify-between'
+            >
+              <Logo />
+              <CompletionStatus
+                progressPercentage={`${progressPercentage}`}
+              />
+            </Container>
+            <ProgressBar progressPercentage={`${progressPercentage}`} />
+          </Container>
+          <Container id='main-content' display='grid'>
+            <TodoList
+              todoList={todoList}
+              removeTodo={removeTodo}
+              changeTodoStatus={changeTodoStatus}
+              setTodoList={setTodoList}
+            />
+            <Container
+              id='client-input'
+              display='flex'
+              direction='flex-col'
+              align='align-center'
+              justify='justify-between'
+            >
+              <AddTodoForm
+                addTodo={addTodo}
+                setTodoList={setTodoList}
+                activeTodos={todoList.length}
+              />
+              <SignInOut
+                setIsModalVisible={setIsModalVisible}
+                setIsRegisteredUser={setIsRegisteredUser}
+                setCurrentUser={setCurrentUser}
+              />
+            </Container>
+          </Container>
+        </Container>
+      </RegisterForm>
+    </UserContext.Provider>
+);}
   if (screenType === 'mobile') return <h1>Mobile View Not Supported Yet</h1>;
 }
 
