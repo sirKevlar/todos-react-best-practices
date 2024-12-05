@@ -2,4 +2,9 @@
 - [x] replace advertising with container
 - [x] add advert component to diagram
 - [x] move controlled component state into form
-- [ ] make priority a select (dropdown)
+- [x] make priority a select (dropdown)
+- [x] fix css list item
+- [x] sort list items
+- [ ] scan for sensitive words
+- [ ] persistence local storage
+- [ ] animations
