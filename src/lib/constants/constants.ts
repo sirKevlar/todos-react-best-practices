@@ -9,23 +9,23 @@ import redFox from '../../assets/redFoxAd.jpeg';
 export const INITIAL_TODOS = [
   {
     id: '1',
-    text: 'do this thing right away',
+    text: 'do this important thing',
     priority: '🔴',
     finishBy: '241215',
     status: 'complete',
   },
   {
     id: '2',
-    text: 'do this thing soon',
+    text: 'and this less important thing',
     priority: '🟡',
-    finishBy: '241215',
+    finishBy: '241225',
     status: 'incomplete',
   },
   {
     id: '3',
-    text: 'do this thing in a bit',
+    text: 'this thing really isn\'t urgent',
     priority: '🟢',
-    finishBy: '241225',
+    finishBy: '241231',
     status: 'incomplete',
   },
 ];
