@@ -56,6 +56,7 @@ export type RegisterFormProps = {
 export type SignInOutProps = {
     setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
     setIsRegisteredUser: React.Dispatch<React.SetStateAction<boolean>> 
+    setCurrentUser: React.Dispatch<React.SetStateAction<User>> 
 }
 export type TodoItemProps = { 
     children?: React.ReactNode
