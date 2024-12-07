@@ -6,5 +6,5 @@
 - [x] fix css list item
 - [x] sort list items
 - [ ] scan for sensitive words
-- [ ] persistence local storage
-- [ ] animations
+- [x] persistence local storage
+- [x] animations
