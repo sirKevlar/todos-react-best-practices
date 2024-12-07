@@ -5,6 +5,10 @@
 - [x] make priority a select (dropdown)
 - [x] fix css list item
 - [x] sort list items
-- [ ] scan for sensitive words
 - [x] persistence local storage
 - [x] animations
+- [x] add minheight to bg comp
+- [x] cleanup / dry up CSS
+- [ ] cleanup components
+- [ ] improve for best practices
+- [ ] host
