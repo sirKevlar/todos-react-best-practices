@@ -27,6 +27,7 @@ export const changeTodoStatus = (id: string, setTodoList: React.Dispatch<React.S
         }
         return todoItem
       })
+      localStorage.setItem('todos', JSON.stringify(newList))
       return newList
     })
   }
