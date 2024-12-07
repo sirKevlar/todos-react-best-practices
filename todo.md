@@ -7,7 +7,7 @@
 - [x] sort list items
 - [x] persistence local storage
 - [x] animations
-- [x] add minheight to bg comp
+- [x] add min-height to bg comp
 - [x] cleanup / dry up CSS
 - [ ] cleanup components
 - [ ] improve for best practices
