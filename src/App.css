@@ -51,6 +51,9 @@ ul {
 .justify-evenly {
   justify-content: space-evenly;
 }
+.priority:hover, .completion-status:hover, #welcome-message:hover {
+  cursor: default;
+}
 #root {
   box-sizing: border-box;
   height: 100vh;
@@ -172,6 +175,9 @@ ul {
 .delete, .close-button {
   border-style: none;
 }
+.delete, .close-button, .priority {
+  opacity: 0.8;
+}
 .delete:hover {
   cursor: pointer;
 }
@@ -209,6 +215,11 @@ ul {
 .primary-button:hover, .delete:hover, .close-button:hover {
   color: magenta;
   box-shadow: magenta 0 0 10px 0;
+  cursor: pointer;
+}
+#dropdown:hover {
+  cursor: pointer;
+  background-color: #d9d9d9;
 }
 #add-todo-button {
   animation: drop-down-3 2.5s ease-in;
